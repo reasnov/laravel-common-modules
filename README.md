@@ -8,7 +8,7 @@ A collection of standard modules for Laravel 12 designed to accelerate your appl
 ## Available Modules
 
 - **Shared**: Common utilities and base classes for all modules.
-- **User**: Profile and user data management.
+- **User**: Basic auth and user data management.
 - **Permission**: Role & Permission management using `spatie/laravel-permission`.
 
 ## Requirements
