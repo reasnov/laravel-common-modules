@@ -1,6 +1,6 @@
 # Service Binding & Auto-Discovery
 
-Internara provides a robust and flexible Service Binding mechanism powered by the `BindServiceProvider`. This system automates the registration of dependency injection bindings while offering complete control through configuration.
+This project provides a robust and flexible Service Binding mechanism powered by the `BindServiceProvider`. This system automates the registration of dependency injection bindings while offering complete control through configuration.
 
 ## Features
 
@@ -50,7 +50,7 @@ Placeholders:
 Prevent auto-binding for specific namespaces (e.g., internal secrets).
 ```php
 'ignored_namespaces' => [
-    'Modules\Core',
+    'Modules\Shared',
     'App\Services\Secret',
 ],
 ```

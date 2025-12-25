@@ -1,6 +1,6 @@
-# Internara - Development Conventions
+# Laravel Common Modules Monorepo - Development Conventions
 
-This document outlines the coding and development conventions for the Internara project. Adhering to these guidelines ensures consistency, maintainability, and high code quality across the application. These conventions supplement the broader guidelines found in the root `GEMINI.md` file and align with the principles detailed in the [Architecture Guide](architecture.md).
+This document outlines the coding and development conventions for the Laravel Common Modules Monorepo project. Adhering to these guidelines ensures consistency, maintainability, and high code quality across the application. These conventions supplement the broader guidelines found in the root `GEMINI.md` file and align with the principles detailed in the [Architecture Guide](architecture.md).
 
 ---
 

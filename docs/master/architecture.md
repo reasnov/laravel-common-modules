@@ -1,4 +1,4 @@
-# Internara - Developer Architecture Guide
+# Laravel Common Modules Monorepo - Developer Architecture Guide
 
 Welcome, developer! This guide provides a comprehensive understanding of Internara's modular architecture, helping you build features efficiently and maintain a robust codebase.
 
@@ -27,7 +27,7 @@ Welcome, developer! This guide provides a comprehensive understanding of Interna
 
 ## 1. Core Architectural Principles
 
-Internara is built as a **Modular Monolith**, meaning it's a collection of self-contained mini-applications (called **Modules**) residing within a single Laravel project. Each module (e.g., `User`, `Internship`) manages a specific business domain, enhancing organization, maintainability, and scalability.
+This project is built as a **Modular Monolith**, meaning it's a collection of self-contained mini-applications (called **Modules**) residing within a single Laravel project. Each module (e.g., `User`, `Order`) manages a specific business domain, enhancing organization, maintainability, and scalability.
 
 **Key Concepts:**
 
@@ -148,7 +148,7 @@ These layers are **not included by default** and should only be introduced when 
 
 ## 4. Pragmatic Layered Architecture & Communication Rules
 
-To ensure maintainability while avoiding over-engineering, Internara adopts a **Pragmatic Layered Architecture**.
+To ensure maintainability while avoiding over-engineering, this project adopts a **Pragmatic Layered Architecture**.
 
 ### 4.1 The Golden Rule of Layered Communication
 
@@ -180,7 +180,7 @@ Use this pattern when an action in `Module A` **immediately** requires a result 
 *   **Usage:** For direct, synchronous dependencies where one module needs to invoke specific logic from another and get an immediate response.
 *   **How it Works:**
     1.  `Module B` defines a `Service Interface` (e.g., `Modules\User\Contracts\Services\UserService`) and provides a concrete implementation.
-    2.  `Module A` (e.g., `InternshipService`) *type-hints* `Module B`'s `Service Interface` in its constructor.
+    2.  `Module A` (e.g., `OrderService`) *type-hints* `Module B`'s `Service Interface` in its constructor.
     3.  Laravel's Service Container automatically injects the concrete `UserService` implementation without `InternshipService` knowing the specific class.
 
 ### 5.2 Pattern 2: Events & Listeners (Decoupled Actions)
@@ -189,9 +189,9 @@ This is the preferred approach for handling side effects or when one action shou
 
 *   **Usage:** When an action occurs in `Module A`, and other modules might need to react to it without `Module A` needing to know or care who those reactors are.
 *   **How it Works:**
-    1.  `Module A` (e.g., `InternshipService`) dispatches an `Event`. This event should carry necessary data.
+    1.  `Module A` (e.g., `OrderService`) dispatches an `Event`. This event should carry necessary data.
     2.  Other modules (e.g., `User`, `Notification`) define `Listeners` that are configured to react to this specific `Event`.
-    3.  The `Internship` module remains completely unaware of which other modules react to its event, ensuring strong decoupling.
+    3.  The `Order` module remains completely unaware of which other modules react to its event, ensuring strong decoupling.
 
 ### 5.3 Pattern 3: Standard Framework Interfaces (Policies/Gates)
 
@@ -200,7 +200,7 @@ Use this pattern for cross-cutting concerns like authorization.
 *   **Usage:** When a domain module needs to authorize an action based on roles or permissions.
 *   **How it Works:**
     1.  The `User` module defines a `Policy`.
-    2.  The `Core` module provides the data (Roles/Permissions) via a seeder.
+    2.  The `Shared` module provides the data (Roles/Permissions) via a seeder.
     3.  The `Permission` module handles the underlying storage logic.
     4.  The domain module simply calls `$user->can('permission.name')`. It doesn't need to know about the `Permission` module or the specific models being used.
 

@@ -1,6 +1,6 @@
 # nwidart/laravel-modules Integration
 
-This package is the foundation of Internara's **Modular Monolith**. It manages the lifecycle and structure of our modules.
+This package is the foundation of this project's **Modular Monolith**. It manages the lifecycle and structure of our modules.
 
 ---
 

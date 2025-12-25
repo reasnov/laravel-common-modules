@@ -1,10 +1,10 @@
-# Internara - Testing Guide
+# Laravel Common Modules Monorepo - Testing Guide
 
 This document outlines the philosophy, conventions, and workflow for writing tests in this project. Code quality and stability are top priorities, and testing is a cornerstone of our development process.
 
 ## Table of Contents
 
--   [Internara - Testing Guide](#internara---testing-guide)
+-   [Laravel Common Modules Monorepo - Testing Guide](#laravel-common-modules-monorepo---testing-guide)
     -   [Table of Contents](#table-of-contents)
     -   [Testing Philosophy](#testing-philosophy)
     -   [Core Framework: Pest](#core-framework-pest)

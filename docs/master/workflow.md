@@ -1,6 +1,6 @@
-# Internara - Modular Monolith Developer Guide
+# Laravel Common Modules Monorepo - Modular Monolith Developer Guide
 
-This document provides a practical, step-by-step guide for developers on how to implement new features within the modular architecture of the Internara application. It builds upon the foundational concepts introduced in the [Architecture Guide](architecture.md).
+This document provides a practical, step-by-step guide for developers on how to implement new features within the modular architecture of the Laravel Common Modules Monorepo application. It builds upon the foundational concepts introduced in the [Architecture Guide](architecture.md).
 
 ---
 

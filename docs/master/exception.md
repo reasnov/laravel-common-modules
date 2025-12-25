@@ -1,6 +1,6 @@
-# Internara - Exception Handling Guidelines
+# Laravel Common Modules Monorepo - Exception Handling Guidelines
 
-This document outlines the philosophy, conventions, and best practices for handling exceptions within the Internara application. Proper exception handling is crucial for maintaining application stability, providing meaningful feedback to users, and facilitating efficient debugging.
+This document outlines the philosophy, conventions, and best practices for handling exceptions within the Laravel Common Modules Monorepo application. Proper exception handling is crucial for maintaining application stability, providing meaningful feedback to users, and facilitating efficient debugging.
 
 ---
 
@@ -30,9 +30,9 @@ Our approach to exception handling is guided by two core principles:
 
 ## 2. Key Exception Classes
 
-Internara leverages both custom domain-specific exceptions and Laravel's built-in exceptions to manage errors effectively.
+This project leverages both custom domain-specific exceptions and Laravel's built-in exceptions to manage errors effectively.
 
-### 2.1 `AppException` (`Modules\Core\Exceptions\AppException`)
+### 2.1 `AppException` (`Modules\Shared\Exceptions\AppException`)
 
 This is the foundational custom exception class for all domain-specific or business logic errors within the application. It provides a robust mechanism to separate user-facing messages from internal logging details.
 
@@ -54,7 +54,7 @@ This is the foundational custom exception class for all domain-specific or busin
     )
     ```
 
-### 2.2 `RecordNotFoundException` (`Modules\Core\Exceptions\RecordNotFoundException`)
+### 2.2 `RecordNotFoundException` (`Modules\Shared\Exceptions\RecordNotFoundException`)
 
 A specialized exception designed for scenarios where a requested data record or resource cannot be located in the system. It extends `AppException`.
 
@@ -81,9 +81,7 @@ Continue to utilize Laravel's native exceptions for framework-level concerns:
 Throw `AppException` when custom business logic rules are violated, and you need to convey a specific message to the user while capturing detailed, structured logs.
 
 ```php
-namespace Modules\User\Services;
-
-use Modules\Core\Exceptions\AppException;
+use Modules\Shared\Exceptions\AppException;
 use Modules\User\Entities\UserEntity;
 
 class UserService
@@ -111,7 +109,7 @@ Throw `RecordNotFoundException` whenever a required resource cannot be found. Pa
 ```php
 namespace Modules\Post\Services;
 
-use Modules\Core\Exceptions\RecordNotFoundException;
+use Modules\Shared\Exceptions\RecordNotFoundException;
 use Modules\Post\Contracts\Repositories\PostRepository;
 use Modules\Post\Entities\PostEntity;
 
@@ -149,8 +147,8 @@ When a lower-level, generic exception (like `QueryException`) occurs due to a vi
 namespace Modules\User\Repositories;
 
 use Illuminate\Database\QueryException;
-use Modules\Core\Exceptions\AppException;
-use Modules\Core\Contracts\Entities\Entity;
+use Modules\Shared\Exceptions\AppException;
+use Modules\Shared\Contracts\Entities\Entity;
 
 class EloquentUserRepository implements UserRepository
 {
@@ -184,7 +182,7 @@ class EloquentUserRepository implements UserRepository
 
 ## 4. Global Exception Handling Strategy
 
-Laravel's `App\Exceptions\Handler.php` is the central hub for defining how all exceptions are rendered and logged. Our custom exceptions are designed to integrate seamlessly with this system.
+Laravel's default exception handler is the central hub for defining how all exceptions are rendered and logged. Our custom exceptions are designed to integrate seamlessly with this system.
 
 ### 4.1 User-Friendly Feedback
 
@@ -199,4 +197,4 @@ Laravel's `App\Exceptions\Handler.php` is the central hub for defining how all e
 *   **Contextual Logging:** The `AppException` constructor accepts a `$context` array. This data is automatically included in log entries, providing rich, structured information for debugging without polluting the log message string itself.
 *   **Sensitivity:** Sensitive information (passwords, API keys) must **never** be passed into the context or log message.
 
-This robust exception handling strategy ensures that Internara provides a professional user experience even during errors, while simultaneously offering comprehensive tools for developers to diagnose and resolve issues efficiently.
+This robust exception handling strategy ensures that this project provides a professional user experience even during errors, while simultaneously offering comprehensive tools for developers to diagnose and resolve issues efficiently.

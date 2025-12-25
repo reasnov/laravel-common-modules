@@ -1,6 +1,6 @@
 # Package Integration Overview
 
-Internara leverages several key Laravel packages to achieve its **Modular Monolith** architecture and reactive UI. This directory documents the specific configurations, extensions, and usage patterns for these core dependencies.
+This project leverages several key Laravel packages to achieve its **Modular Monolith** architecture and reactive UI. This directory documents the specific configurations, extensions, and usage patterns for these core dependencies.
 
 ---
 

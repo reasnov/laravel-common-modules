@@ -1,6 +1,6 @@
-# Internara - Artisan Commands Reference
+# Laravel Common Modules Monorepo - Artisan Commands Reference
 
-This document provides a comprehensive and categorized reference of all available Artisan commands within the Internara application. Use this guide to quickly find commands for development, maintenance, and debugging tasks.
+This document provides a comprehensive and categorized reference of all available Artisan commands within this project. Use this guide to quickly find commands for development, maintenance, and debugging tasks.
 
 ---
 

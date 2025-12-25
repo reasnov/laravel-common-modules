@@ -1,12 +1,12 @@
-# Internara - Conceptual Best Practices Guide
+# Laravel Common Modules Monorepo - Conceptual Best Practices Guide
 
-This guide provides a high-level overview of the core conceptual best practices and foundational principles governing development on the Internara project. These are the overarching ideas that developers should always keep in mind.
+This guide provides a high-level overview of the core conceptual best practices and foundational principles governing development on this project. These are the overarching ideas that developers should always keep in mind.
 
 ---
 
 ## 1. Core Architecture: Modular Monolith
 
-Internara is built as a **Modular Monolith**, where distinct business domains are encapsulated in self-contained **Modules**. This promotes organization, maintainability, and scalability.
+This project is built as a **Modular Monolith**, where distinct business domains are encapsulated in self-contained **Modules**. This promotes organization, maintainability, and scalability.
 
 -   **Layered Structure:** Each module adheres to a pragmatic layered architecture:
 
