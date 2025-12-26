@@ -1,7 +1,6 @@
 # Laravel Common Modules (Monorepo)
 
-[![Latest Version](https://img.shields.io/github/release/reasnov/laravel-common-modules.svg?style=flat-square)](https://github.com/reasnov/laravel-common-modules/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Package License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 A collection of standard modules for Laravel 12 designed to accelerate your application development. This project uses a monorepo structure to ensure consistency and synchronization between modules.
 
